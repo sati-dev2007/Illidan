@@ -10,11 +10,49 @@ p & \text{se } x=1 \\\\
 
 **Exemplos:** cara ou coroa, filtro de spam, reconhecimento de objetos, diagnóstico de doença, etc.
 
+Assim, a distribuição de Bernoulli se aplica a experimentos em que os resultados apresentam ou não uma determinada característica. 
+
+Por exemplo, suponha que você observa em uma livraria que a próxima pessoa comprará um romance ou uma HQ. Seja a variável aleatória:
+
+$$X = \begin{cases} 
+1 & \text{a pessoa compra um romance} \\\\ 
+0 & \text{a pessoa compra uma HQ} 
+\end{cases}$$
+
+E você sabe que 20% dos compradores escolhem comprar um romance, então temos:
+
+<div align="center">
+
+$$
+P(X=1) = P(\text{comprar um romance}) = 0,2
+$$
+
+$$
+P(X=0) = P(\text{comprar uma HQ}) = 0,8
+$$
+
+</div>
+
+E a distribuição de probabilidade de X é dada por:
+
+$$f(x;0,2) = \begin{cases} 
+0,2 & \text{se } x=1 \\\\ 
+0,8 & \text{se } x=0 
+\end{cases}$$
+
+
 ## 2. Distribuição Uniforme sobre Inteiros
 Seja $a \le b$ inteiros. Suponha que o valor de uma variável aleatória $X$ é igualmente provável ser cada um dos inteiros $a, a+1, ..., b-1, b$. Então $X$ tem uma distribuição uniforme sobre inteiros $a, a+1, ..., b-1, b$ e a função de probabilidade é dada por:
 
 $$f(x;a,b) = \begin{cases} 
 \frac{1}{b-a+1} & \text{se } x \in \{a,...,b\} \\\\ 
+0 & \text{caso contrário} 
+\end{cases}$$
+
+Por exemplo, seja X a variável aleatória que indica o "o número de pontos marcados na face superior de um dado", quando ele é lançado. Considerando que o dado é honesto, temos que todas as faces possuem a mesma probabilidade de ocorrer, de modo que a distribuição de probabilidade de X será:
+
+$$f(x;1,6) = \begin{cases} 
+\frac{1}{6} & \text{se } x \in \{1,...,6\} \\\\ 
 0 & \text{caso contrário} 
 \end{cases}$$
 
@@ -25,6 +63,12 @@ $$f(x;n,p) = \begin{cases}
 \binom{n}{x}p^x(1-p)^{n-x} & \text{se } x \in \{0,1,...,n\} \\\\ 
 0 & \text{caso contrário} 
 \end{cases}$$
+
+Assim, a distribuição binomial ocorre quando repetimos um ensaio de Bernoulli $n$ vezes, e como a binomial considera que os ensaios são independentes, podemos fazer uma combinação para englobar todos os resultados possíveis.
+
+Por exemplo, se considerarmos $n = 3$ lançamentos de moeda, com $P(S) = p$, $P(F) = 1 - p = q$, podemos construir a seguinte árvore de possibilidades, com as respectivas probabilidades de cada resultado:
+
+<img src="assets/binomial_exemplo.png" width=700>
 
 ## 4. Distribuição Hipergeométrica
 Considere $A$ elementos de um tipo e $B$ elementos de um segundo tipo, então $x$ é a quantidade de elementos dentre os $A$ elementos, quando realizados $n$ sorteios sem reposição nos $A+B$ elementos. A função de probabilidade com parâmetros $A$, $B$ e $n$ (para $A+B \ge n$) é:
